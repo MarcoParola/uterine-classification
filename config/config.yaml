@@ -1,0 +1,44 @@
+task: 'classification'
+classification_mode: 'whole'
+
+# models and weights here: https://pytorch.org/vision/stable/models.html
+load_model: shufflenet_v2_x1_0
+
+model:
+  num_classes: 3
+  name: resnet50
+  weights: ResNet50_Weights.IMAGENET1K_V2
+
+model_seg: 'fcn'
+sgm_type: 'soft'
+
+dataset:
+  train: ./data/train.json
+  val: ./data/val.json
+  test: ./data/test.json
+  resize: 224
+
+train:
+  save_path: "./models/"
+  seed: -1
+  batch_size: 32
+  lr: 0.000004
+  accelerator: "cpu"
+  devices: 1
+  max_epochs: 100
+
+generate_map: "None"
+
+checkpoint:
+  version: 0
+
+log:  
+  path: "./logs/"
+  wandb: True
+  tensorboard: False
+
+wandb:
+  wandb:
+  entity: edoardo-malaspina
+  project: improve_classifier_via_segment 
+  tag: ""

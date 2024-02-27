@@ -21,7 +21,7 @@ python -m venv env
 python -m pip install -r requirements.txt
 mkdir data
 ```
-Then you can download the oral `dataset.json` (both images and json file) from TODO-put-link. Copy them into `data` folder and unzip the file `gyn1.zip`. Then, prepare the data as described [here](./doc/README.md#additional-utility-scripts)
+Then you can download the uterine `dataset.json` (both images and json file) from TODO-put-link. Copy them into `data` folder and unzip the file `gyn1.zip`. Then, prepare the data as described [here](./doc/README.md#additional-utility-scripts)
 
 Next, create a new project on [Weights & Biases](https://wandb.ai/site) named `uterine-classification`. Edit `entity` parameter in [config.yaml](https://github.com/MarcoParola/uterine-classification/blob/main/config/config.yaml#L42) by sett. Log in and paste your API key when prompted.
 ```sh
